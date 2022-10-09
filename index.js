@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 4000;
+
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
@@ -24,8 +24,11 @@ app.use("/api/post", postRouter);
 
 const start = async () => {
     try {
-        await connectDB(process.env.MONGO_URL)
-        app.listen(port, console.log(`Server is listening at http://localhost:${port}`))
+        
+        await connectDB(process.env.MONGO_URL);
+      
+        console.log("MongoDB Connected !");
+        app.listen(process.env.PORT, console.log(`Server is listening at http://localhost:${process.env.PORT}`))
     } catch (error) {
         console.log(error)
     }

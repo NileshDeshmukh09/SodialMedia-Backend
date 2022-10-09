@@ -28,7 +28,9 @@ async function registerUser(req, res){
         });
     }
     catch (err) {
+        console.log(err);
         res.status(500).json({
+            
             success : "false",
             msg : "Invalid Details for Signup!"
         });
@@ -57,7 +59,9 @@ async function userLogin(req,res){
             msg : "Ohh ! Wrong Pssword",
          });
 
-        res.status(200).json( user );
+        res.status(200).json( {
+            status : true,
+            user : user });
     }
     catch(err){
         res.status(500).json({
