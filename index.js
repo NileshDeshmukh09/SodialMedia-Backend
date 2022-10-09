@@ -8,6 +8,7 @@ const helmet = require("helmet");
 const userRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
 const postRouter = require("./routes/posts");
+const startRouter = require("./routes/start");
 const connectDB = require("./db/connect");
 
 dotenv.config();
@@ -20,6 +21,7 @@ app.use(morgan("common"));
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/post", postRouter);
+app.use( startRouter);
 
 
 const start = async () => {

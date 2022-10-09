@@ -73,4 +73,11 @@ async function userLogin(req,res){
 
 };
 
-module.exports = { registerUser , userLogin }
+async function startApp( req , res ){
+     return res.status(200).json( {
+        status : true,
+        message : "Welcome to Social-Media-backend" 
+    });
+}
+
+module.exports = { registerUser , userLogin , startApp}
