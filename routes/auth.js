@@ -14,5 +14,14 @@ router.post("/register", authController.registerUser );
 router.post("/login" , authController.userLogin );
 
 
+router.post("/" , async ( req , res ) => {
+    res.status(200).send({
+        success : true ,
+        message : "Welcome to Social Media-Backend !"
+    }
+       )
+} );
+
+
 
 module.exports = router;
